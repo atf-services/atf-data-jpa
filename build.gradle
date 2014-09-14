@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+jar {
+    baseName = 'spring-data-jpa'
+    version =  '1.0-SNAPSHOT'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+}
+
+dependencies {
+    compile 'org.springframework.data:spring-data-jpa:1.7.0.RELEASE'
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.0.1.Final'
+    compile 'org.codehaus.groovy:groovy-all:2.3.4:indy'
+    compile 'org.slf4j:slf4j-simple:1.6.1'
+
+    runtime 'org.postgresql:postgresql:9.3-1100-jdbc4'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
