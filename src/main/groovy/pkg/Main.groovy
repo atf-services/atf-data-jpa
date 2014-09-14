@@ -1,14 +1,14 @@
 package pkg
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
-import org.springframework.context.annotation.ComponentScan;
 
 class Main {
     static void main(String[] args) {
         def context = new AnnotationConfigApplicationContext(Config.class)
 
         def repo = context.getBean(PersonRepository.class)
-
-        println "WTF"
+        def person = new Person(firstName: 'Todd', lastName: 'Crone')
+        repo.save(person)
+        println "Person with ID=${person.id}"
     }
 }
