@@ -22,7 +22,7 @@ class JpaPersonService implements PersonService {
     }
 
     @Override
-    Person get(Long id) {
+    Person get(long id) {
         return this.repository.findOne(id)
     }
 

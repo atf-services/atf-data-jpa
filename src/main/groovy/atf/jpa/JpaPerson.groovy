@@ -13,7 +13,7 @@ public class JpaPerson implements Person {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    Long id;
+    long id;
     String firstName;
     String lastName;
 
