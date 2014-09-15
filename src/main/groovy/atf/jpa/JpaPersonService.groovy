@@ -12,9 +12,13 @@ class JpaPersonService implements PersonService {
     PersonRepository repository
 
     @Override
+    Person create(Map<String, Object> properties) {
+        return new JpaPerson(properties);
+    }
+
+    @Override
     Person save(Person person) {
-        Person p = this.repository.save(person)
-        return p
+        return this.repository.save(person)
     }
 
     @Override
