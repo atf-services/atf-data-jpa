@@ -4,14 +4,6 @@ apply plugin: 'idea'
 jar {
     baseName = 'spring-data-jpa'
     version =  '1.0-SNAPSHOT'
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-        configurations.runtime.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
 }
 
 repositories {
