@@ -16,6 +16,8 @@ public class JpaPerson extends Person {
 
     protected JpaPerson() {}
 
+    public getId() { return this.id };
+
     public JpaPerson(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
