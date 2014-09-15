@@ -1,8 +1,8 @@
 package atf.api;
 
 public interface PersonService {
-    public Person save(Person person);
-    public Person get(Long id);
-    public void delete(Person person);
-    public Person findByFirstName(String firstName);
+    public AbstractPerson save(AbstractPerson person);
+    public AbstractPerson get(Long id);
+    public void delete(AbstractPerson person);
+    public AbstractPerson findByFirstName(String firstName);
 }

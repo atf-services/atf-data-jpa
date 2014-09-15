@@ -1,8 +1,10 @@
 package atf.api;
 
-public class Person {
+public abstract class AbstractPerson {
     private String firstName;
     private String lastName;
+
+    abstract public long getId();
 
     public String getLastName() {
         return lastName;

@@ -1,6 +1,6 @@
 package atf.jpa
 
-import atf.api.Person
+import atf.api.AbstractPerson
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-public class JpaPerson extends Person {
+public class JpaPerson extends AbstractPerson {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -16,7 +16,8 @@ public class JpaPerson extends Person {
 
     protected JpaPerson() {}
 
-    public getId() { return this.id };
+    @Override
+    public long getId() { return this.id };
 
     public JpaPerson(String firstName, String lastName) {
         this.firstName = firstName;
