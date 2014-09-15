@@ -2,7 +2,7 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'spring-data-jpa'
+    baseName = 'atf-data-jpa'
     version =  '1.0-SNAPSHOT'
 }
 
