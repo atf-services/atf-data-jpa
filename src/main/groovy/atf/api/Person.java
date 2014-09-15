@@ -1,6 +1,6 @@
 package atf.api;
 
-public abstract class AbstractPerson {
+public abstract class Person {
     private String firstName;
     private String lastName;
 

@@ -22,10 +22,9 @@ class ServiceContext {
     }
 
     JpaPerson createPerson(firstName, lastName) {
-        def p = new JpaPerson(firstName: firstName, lastName: lastName)
-        def repo = this.applicationContext.getBean(PersonRepository.class)
-        repo.save(p)
-        p
+        def person = new JpaPerson(firstName: firstName, lastName: lastName)
+        def service = this.applicationContext.getBean(JpaPersonService.class)
+        service.save(person)
     }
 
 }

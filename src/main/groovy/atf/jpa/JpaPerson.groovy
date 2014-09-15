@@ -1,6 +1,6 @@
 package atf.jpa
 
-import atf.api.AbstractPerson
+import atf.api.Person
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-public class JpaPerson extends AbstractPerson {
+public class JpaPerson extends Person {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
