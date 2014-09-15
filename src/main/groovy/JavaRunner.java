@@ -1,7 +1,7 @@
 import atf.api.Person;
 import atf.api.PersonService;
-import atf.jpa.JpaPerson;
-import atf.jpa.ServiceContext;
+import atf.api.ServiceContext;
+import atf.jpa.JpaServiceContext;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
 public class JavaRunner {
     public static void main(String[] args) {
         println("Java Runner starting...");
-        ServiceContext context = ServiceContext.getInstance();
+        ServiceContext context = JpaServiceContext.getInstance();
         PersonService service = context.getPersonService();
         Map<String, Object> props = new HashMap<String, Object>();
         props.put("firstName", "Todd");

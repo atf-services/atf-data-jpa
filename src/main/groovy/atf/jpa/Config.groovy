@@ -20,10 +20,6 @@ import javax.persistence.EntityManagerFactory;
 @EnableTransactionManagement
 class Config {
 
-    static {
-        println "Enabling JPA repos"
-    }
-
     @Bean
     public DataSource dataSource() {
         DataSource dataSource = new DriverManagerDataSource()
