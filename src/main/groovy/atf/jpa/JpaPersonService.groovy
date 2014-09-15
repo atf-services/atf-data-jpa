@@ -23,12 +23,12 @@ class JpaPersonService implements PersonService {
 
     @Override
     Person get(Long id) {
-        return null
+        return this.repository.findOne(id)
     }
 
     @Override
     void delete(Person person) {
-
+        this.repository.delete(person)
     }
 
     @Override

@@ -15,8 +15,12 @@ public class JavaRunner {
         props.put("firstName", "Todd");
         props.put("lastName", "Crone");
         Person p = service.create(props);
+        println(p.toString());
         service.save(p);
         println("Person with ID=" + p.getId());
+        Person p2 = service.get(p.getId());
+        println(p2.toString());
+        //service.delete(p2);
     }
 
     static void println(String s) {
