@@ -1,4 +1,5 @@
-import pkg.*
+import atf.*
+import atf.jpa.ServiceContext
 
 context = ServiceContext.instance
 person = context.createPerson('Todd', 'Crone')
