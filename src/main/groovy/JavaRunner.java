@@ -11,16 +11,23 @@ public class JavaRunner {
         println("Java Runner starting...");
         ServiceContext context = JpaServiceContext.getInstance();
         PersonService service = context.getPersonService();
-        Map<String, Object> props = new HashMap<String, Object>();
+
+        Map<String, Object> props = new HashMap<>();
         props.put("firstName", "Todd");
         props.put("lastName", "Crone");
         Person p = service.create(props);
         println(p.toString());
+
         service.save(p);
         println("Person with ID=" + p.getId());
+
         Person p2 = service.get(p.getId());
         println(p2.toString());
-        //service.delete(p2);
+        long id = p.getId();
+
+        service.delete(p2);
+        p = service.get(id);
+        println(p == null ? "Person deleted" : "Person NOT deleted!!!");
     }
 
     static void println(String s) {
