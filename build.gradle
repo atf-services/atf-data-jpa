@@ -19,6 +19,7 @@ dependencies {
     compile 'org.hibernate:hibernate-entitymanager:4.0.1.Final'
     compile 'org.codehaus.groovy:groovy-all:2.3.4:indy'
     compile 'org.slf4j:slf4j-simple:1.6.1'
+    compile fileTree(dir: '../atf-services-api/build/libs', includes: ['*.jar'])
 
     runtime 'org.postgresql:postgresql:9.3-1100-jdbc4'
 }
